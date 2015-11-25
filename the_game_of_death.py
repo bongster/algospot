@@ -1,28 +1,22 @@
 T = int(input())
 
 
-def get_point_number(point_map, max_count, current_member, try_count):
-    if max_count < try_count:
+def get_point_number(to_list, to_number, current_member, try_count):
+    if len(to_list) < try_count:
         return 0
-    elif point_map[current_member] == max_count:
+    elif to_list[int(current_member)] == to_number:
         return try_count + 1
     else:
         return get_point_number(
-            point_map,
-            max_count,
-            point_map[current_member],
+            to_list,
+            to_number,
+            int(to_list[current_member]) - 1,
             try_count + 1
         )
 
 
 for case in range(T):
-    point_map = {}
-    number_of_members = int(input())
-    enable_game = False
-    for me in range(1, number_of_members + 1):
-        point_map[me] = int(input())
-        enable_game = enable_game or point_map[me] == number_of_members
+    number_of_members = input()
+    to_list = [input() for me in range(int(number_of_members))]
 
-    print(get_point_number(point_map, number_of_members, 1, 0)
-          if enable_game
-          else 0)
+    print(get_point_number(to_list, number_of_members, 0, 0))
