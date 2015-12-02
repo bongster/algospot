@@ -1,4 +1,3 @@
 # algospot
 
-- codeforce
-  - http://codeforces.com/contest/600
+- [codeforce](https://github.com/bongster/algospot/tree/master/codeforces)
