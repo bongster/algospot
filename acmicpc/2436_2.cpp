@@ -12,7 +12,7 @@ long long getY(long long &a, long long &gcd_value, long long &gcf_value) {
 int main() {
 	long long n, m, length, ans[2] = {100000000, 100000000};
 	scanf("%lld %lld", &n, &m);
-	length = m / n - 1;
+	length = m / n;
 
 	long long x=0, y=0;
 	for (long long i=1; i < length; i++) {
@@ -22,8 +22,8 @@ int main() {
 		}
 		y = getY(x, n, m);
 		if (x + y < ans[0] + ans[1]) {
-			ans[0] = x;
-			ans[1] = y;
+			ans[0] = min(x, y);
+			ans[1] = max(x, y);
 		}
 		cache[x] = cache[y] = true;
 	}
