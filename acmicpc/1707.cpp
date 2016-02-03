@@ -12,8 +12,13 @@ int main() {
 		int v, e;
 		scanf("%d %d", &v, &e);
 		vector<int> a[v + 1];
-		bool check[v + 1]= {false};
-		int group[v + 1]= {0};
+		bool check[v + 1];
+		int group[v + 1];
+
+		for (int i=1; i<=v; i++) {
+			check[i] = false;
+			group[i] = 0;
+		}
 
 		for (int i=0; i < e; i++) {
 			int sp, ep;
@@ -22,20 +27,27 @@ int main() {
 			a[ep].push_back(sp);
 		}
 
-		queue<int> q;
-		check[1] = true;
-		group[1] = 1;
-		q.push(1);
+		for (int i=1;i<=v;i++) {
+			queue<int> q;
+			if (check[i]) {
+				continue;
+			};
+			if (group[i] == 0) {
+				group[i] = 1;
+			}
+			q.push(i);
 
-		while (!q.empty()) {
-			int x = q.front();
-			q.pop();
-			for (int i=0; i<a[x].size() ; i++) {
-				int y = a[x][i];
-				if (check[y] == false) {
-					check[y] = true;
-					group[y] = 3 - group[x];
-					q.push(y);
+			while (!q.empty()) {
+				int x = q.front();
+				check[i] = true;
+				q.pop();
+				for (int i=0; i<a[x].size() ; i++) {
+					int y = a[x][i];
+					if (check[y] == false) {
+						check[y] = true;
+						group[y] = 3 - group[x];
+						q.push(y);
+					}
 				}
 			}
 		}
