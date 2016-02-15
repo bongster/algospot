@@ -8,7 +8,7 @@ long long a[100001];
 
 bool check(long long time, int &n, long long &m) {
     // time에서 만들수 있는 최대 값이 m 보다 크면
-    int count=0;
+    long long count=0;
     for (int i=1; i<= n; i++) {
         count = count + (time / a[i]);
     }
