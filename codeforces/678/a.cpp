@@ -3,12 +3,17 @@ using namespace std;
 
 int MAX = 1000000000;
 int main() {
-	int n, k;
+	int n, k, ans;
 	scanf("%d %d", &n, &k);
-	for (int i=n; i <= MAX; i ++) {
-		if (i % k == 0) {
-			printf("%d\n", i);
-			break;
+	if (k == 1) {
+		printf("%d", n +1);
+	} else {
+		for (int i=1; i <= MAX; i++) {
+			ans = k * i;
+			if (n < ans) {
+				printf("%d\n", ans);
+				break;
+			}
 		}
 	}
 	return 0;
