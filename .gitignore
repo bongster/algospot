@@ -59,4 +59,7 @@ docs/_build/
 target/
 
 # Vagrant
-.vagrant/
+/.vagrant/
+
+# Visual studio code
+/.vscode/
