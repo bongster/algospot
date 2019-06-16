@@ -13,6 +13,12 @@ class Matrix():
             print(self.matrix)
             return
 
+        # TODO: support non squar type matrix
+        for i in range(self.height):
+            if len(self.matrix[i]) != self.height:
+                print('only support squar type')
+                return
+        
         # print(self.matrix, int(self.height/ 2))
         x = 0
         while x < math.floor(self.height/2):
