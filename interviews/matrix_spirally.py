@@ -73,14 +73,14 @@ class Matrix():
             print(self.matrix[center_i][center_i])
 
 if __name__ == "__main__":
-    # m = Matrix([
-    #     [1, 2, 3, 4],
-    #     [5, 6, 7, 8],
-    #     [9 ,10, 11, 12],
-    #     [13, 14, 15, 16],
-    # ])
-    # m.print_origin()
-    # m.print_spirally()
+    m = Matrix([
+        [1, 2, 3, 4],
+        [5, 6, 7, 8],
+        [9 ,10, 11, 12],
+        [13, 14, 15, 16],
+    ])
+    m.print_origin()
+    m.print_spirally()
 
     m2 = Matrix([
         [1, 2, 3, 4, 5],
@@ -89,5 +89,5 @@ if __name__ == "__main__":
         [16, 17, 18, 19, 20],
         [21, 22, 23, 24, 25],
     ])
-    # m2.print_origin()
+    m2.print_origin()
     m2.print_spirally()
