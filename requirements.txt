@@ -4,15 +4,25 @@
 #
 #    pip-compile --output-file requirements.txt requirements.in
 #
-
-boto==2.38.0              # via mrjob
-click==6.6                # via pip-tools
-filechunkio==1.6          # via mrjob
-first==2.0.1              # via pip-tools
-JPype1==0.6.1             # via konlpy
+boto==2.38.0
+    # via mrjob
+click==6.6
+    # via pip-tools
+filechunkio==1.6
+    # via mrjob
+first==2.0.1
+    # via pip-tools
+jpype1==0.6.1
+    # via konlpy
 konlpy==0.4.4
+    # via -r requirements.in
 mrjob==0.4.5
+    # via -r requirements.in
 pip-tools==1.6.5
-PyYAML==3.11              # via mrjob
-simplejson==3.8.0         # via mrjob
-six==1.10.0               # via pip-tools
+    # via -r requirements.in
+pyyaml==5.4
+    # via mrjob
+simplejson==3.8.0
+    # via mrjob
+six==1.10.0
+    # via pip-tools
